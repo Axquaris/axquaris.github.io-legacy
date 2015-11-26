@@ -1,0 +1,3 @@
+$ cat .gitattributes
+bootstrap/* linguist-vendored
+jquery/* linguist-vendored
