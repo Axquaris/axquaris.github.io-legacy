@@ -45,3 +45,10 @@ a:hover {
 h1, h2 {
 	color: #ff9900;
 }
+.body h2, .side-bar h2 {
+	border-bottom: 1px solid #000;
+}
+
+.body .container p {
+	font-size: 16px;
+}
