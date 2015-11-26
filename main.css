@@ -16,18 +16,10 @@ body {
     background-color: #1c1c1c;
 }
 
-.nav {
-    background-color: 333333;
-}
-
 .side-bar, .body {
 	color: #999999;
 	background-color: #1c1c1c;
 	border: 2px solid #000;
-}
-
-.container {
-	width: 100%;
 }
 
 a:link {
@@ -45,10 +37,24 @@ a:hover {
 h1, h2 {
 	color: #ff9900;
 }
+
 .body h2, .side-bar h2 {
 	border-bottom: 1px solid #000;
 }
 
-.body .container p {
-	font-size: 16px;
+.navbar {
+	padding-bottom: 10px;
+}
+
+img {
+	width: 100%;
+}
+
+.side-bar .container-fluid, .body .container-fluid {
+	padding-bottom: 10px;
+}
+
+.body .container-fluid {
+	padding-left: 12px;
+	padding-right: 10px;
 }
