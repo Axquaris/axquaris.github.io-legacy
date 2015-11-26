@@ -9,18 +9,39 @@ body {
 
 .header h1 {
 	font-family: "Arial Black", Gadget, sans-serif;
-	color: #5E5E5E;
-	font-weight: bold;
 }
 
-.side-bar {
-	color: #fff;
-	background-color: #5E5E5E;
+.nav-pills{
+    border: 2px solid #000;
+    background-color: #1c1c1c;
+}
+
+.nav {
+    background-color: 333333;
+}
+
+.side-bar, .body {
+	color: #999999;
+	background-color: #1c1c1c;
 	border: 2px solid #000;
 }
 
-.body {
-	color: #fff;
-	background-color: #5E5E5E;
-	border: 2px solid #000;
+.container {
+	width: 100%;
+}
+
+a:link {
+	color: #ff9900;
+}
+
+a:visited {
+	color: #dd7700;
+}
+
+a:hover {
+	color: #ffaa00;
+}
+
+h1, h2 {
+	color: #ff9900;
 }
