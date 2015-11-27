@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=400feaa48cb188aabe37)
- * Config saved to config.json and https://gist.github.com/400feaa48cb188aabe37
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=7c8f25f758b54ece0c8e)
+ * Config saved to config.json and https://gist.github.com/7c8f25f758b54ece0c8e
  */
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -1135,8 +1135,8 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: #383838;
+  border: 1px solid #000000;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -4087,8 +4087,8 @@ a.label:focus {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: #383838;
+  border: 1px solid #000000;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
@@ -4105,8 +4105,8 @@ a.thumbnail.active {
   border-color: #ff9900;
 }
 .thumbnail .caption {
-  padding: 9px;
-  color: #4f4f4f;
+  padding: 8px;
+  color: #999999;
 }
 .media {
   margin-top: 15px;

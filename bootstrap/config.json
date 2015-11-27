@@ -329,11 +329,11 @@
     "@panel-danger-border": "@state-danger-border",
     "@panel-danger-heading-bg": "@state-danger-bg",
     "@thumbnail-padding": "4px",
-    "@thumbnail-bg": "@body-bg",
-    "@thumbnail-border": "#ddd",
+    "@thumbnail-bg": "#383838",
+    "@thumbnail-border": "#000",
     "@thumbnail-border-radius": "@border-radius-base",
-    "@thumbnail-caption-color": "@text-color",
-    "@thumbnail-caption-padding": "9px",
+    "@thumbnail-caption-color": "#999999",
+    "@thumbnail-caption-padding": "8px",
     "@well-bg": "#f5f5f5",
     "@well-border": "darken(@well-bg, 7%)",
     "@badge-color": "#fff",
@@ -414,5 +414,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=400feaa48cb188aabe37"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=7c8f25f758b54ece0c8e"
 }

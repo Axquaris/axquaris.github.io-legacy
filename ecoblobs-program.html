@@ -30,37 +30,40 @@
 			</div>
 		</nav>
 
-		<div class="ecoblobs container">
-			<!--Load Resources-->
-			<script src="https://dl.dropboxusercontent.com/s/oaprsibn7sfjfck/processing.js?dl=0"></script>
-			<script src="https://dl.dropboxusercontent.com/s/15ntve77p59ivc8/Guido.js?dl=0"></script>
-			<script src="https://dl.dropboxusercontent.com/s/m21ztbb1sd4psah/jquery-2.1.4.min.js?dl=0"></script>
-										   
-			<!--Setup Processing Sketch-->
-			<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0"></canvas>
-			<br />
-			<input class="pause btn btn-success" onclick="
-				var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
-				var pjs = Processing.getInstanceById(pid);
-				
-				if ((this).value === 'RESUME' || (this).value === 'START') {
-					pjs.loop();
-					this.value = 'PAUSE';
-				} else if ((this).value === 'PAUSE') {
-					pjs.noLoop();
-					this.value = 'RESUME';
-				}
-			" type="button" value="START" />
-			<input class="pause btn btn-success" onclick="
-				var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
-				var pjs = Processing.getInstanceById(pid);
-				pjs.toggleDebug();
-			" type="button" value="DEBUG" />
+		<div class="ecoblobs">
+			<div class="container">
+				<!--Load Resources-->
+				<script src="https://dl.dropboxusercontent.com/s/oaprsibn7sfjfck/processing.js?dl=0"></script>
+				<script src="https://dl.dropboxusercontent.com/s/15ntve77p59ivc8/Guido.js?dl=0"></script>
+				<script src="https://dl.dropboxusercontent.com/s/m21ztbb1sd4psah/jquery-2.1.4.min.js?dl=0"></script>
+											   
+				<!--Setup Processing Sketch-->
+				<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0"></canvas>
+				<br />
+				<input class="pause btn btn-success" onclick="
+					var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
+					var pjs = Processing.getInstanceById(pid);
+					
+					if ((this).value === 'RESUME' || (this).value === 'START') {
+						pjs.loop();
+						this.value = 'PAUSE';
+					} else if ((this).value === 'PAUSE') {
+						pjs.noLoop();
+						this.value = 'RESUME';
+					}
+				" type="button" value="START" />
+				<input class="pause btn btn-success" onclick="
+					var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
+					var pjs = Processing.getInstanceById(pid);
+					pjs.toggleDebug();
+				" type="button" value="DEBUG" />
+			</div>
 		</div>
 
 		<div class="footer">
 			<div class="container">
-				<h4>CERTIFIED BY LEE'S DEPARTMENT OF OCD <span class="glyphicon glyphicon-sunglasses" style="font-size:20px"></span></h4>
+				<h5>CERTIFIED BY LEE'S DEPARTMENT OF OCD <span class="glyphicon glyphicon-sunglasses" style="font-size:20px"></span></h5>
+				<h5>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2015 by Dominykas Buracas. All rights reserved.</h5>
 			</div>
 		</div>
 	</body>
