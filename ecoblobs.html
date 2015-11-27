@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 	<head>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic,500italic' rel='stylesheet' type='text/css'>
+		
 		<link href="main.css" rel="stylesheet">
+		
 		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<link href="main.css" rel="stylesheet">
 	</head>
 
@@ -30,9 +35,18 @@
 				<div class="col-sm-9">
 					<div class="body">
 						<div class="container-fluid">
-							<h2>Le Ecoblooberz</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacus massa, volutpat ac ultricies a, blandit sit amet erat. Duis vel ligula vel magna elementum placerat. Donec vitae posuere augue. Vestibulum ut massa pellentesque, venenatis tellus sit amet, molestie leo. Quisque sagittis, diam quis sollicitudin accumsan, nunc dui maximus nisl, a ornare magna nunc at lorem. Praesent blandit consectetur fringilla. Etiam gravida laoreet ante, vel pellentesque metus viverra in. Suspendisse sit amet justo felis. Morbi at mauris sit amet orci porttitor tincidunt. Etiam vitae nisl nec lacus gravida placerat quis vitae velit. Fusce placerat blandit neque id dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis maximus augue ac venenatis. Aenean velit nisi, scelerisque ac elit nec, condimentum</p>
-							<a href="ecoblobs-program.html"><h4> <span class="glyphicon glyphicon-play"></span> Ecoblobs</h4></a>
+							<h2>Ecoblobs</h2>
+							<p class="lead">Ecoblobs is the flagship project for my blog. It features a dynamic, living ecosystem where different species of simple organisms compete for survival.</p>
+							<p>The three species of organisms are the red carnivores, grey herbivores, and green plants. All the species are capable of reproduction while only the carnivores and herbivores can move of their own accord and "think". Reproduction is done asexually and mimics binary fission, it only occurs when a creature passes a certain mass limit and is not overcrowded or threatened by other organisms. The AI is fairly simple, it considers all the other relevant creatures in the ecosystem, it then uses a system of equations based on relative mass, distance, and current actions to determine what to do in relation to the other blob and how important doing so is. The average is then taken of all these desires and used to decide a path of acceleration. The physical world is governed by physical principles like F=M*A and drag, however there is still a lot of work to be done such as implementing drag in water. The world itself is a torus, this means that going up will eventually get you to the bottom, and vice versa. This also applies to the left and right edges of the world. The dynamics of this ecosystem are quite realistic and are based upon a simple food chain that tries to keep any one species from becoming too populus or any species dying out, however balancing the species is very difficult so the populations will fluctuate quite a lot.</p>
+							<h3>Controlls:</h3>
+							<ul>
+								<li>Bottom left corner button resets the simulation and regenerates the creature populations based on the values entered in the sliders</li>
+								<li>The 6 different sliders correspond to different variables that affect the growth/metabolism and starting # of all the creatures. The left three correspond to the corresponding color species and define how many creatures are spawned when the simulation is reset. The right three allso correspond to the same color species and will change the growth and metabolism rates of critters when the simulation is reset.</li>
+								<li>The graph in the far right shows the total mass of each species with the lines corresponding to the similarly colored critter. It's left side shows the newest values. This tool is very useful for seeing how the different species are interacting.</li>
+								<li>If you press on any creature the graph will be replaced with a list of data about the creature's properties, this is useful for tracking an individual critter or finding out data. To switch back to the graph click anywhere in empty space.</li>
+								<li>If you press the debug button at the bottom of the program or the "D" key a FPS (Frames Per Second) counter will pop up and a bunch of lines showing the flow of underwater currents pushing the plants will show too. The lines show deviations of the current from it's right-to-left flow. You can turn off the debug mode the same way you enabled it.</li>
+							</ul>
+							<a href="ecoblobs-program.html"><h3>Ecoblobs Simulation <span class="glyphicon glyphicon-play"></span></h3></a>
 						</div>
 					</div>
 				</div>

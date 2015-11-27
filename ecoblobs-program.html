@@ -1,27 +1,61 @@
-<div class="ecoblobs">
-	<!--Load Resources-->
-	<script src="https://dl.dropboxusercontent.com/s/oaprsibn7sfjfck/processing.js?dl=0"></script>
-	<script src="https://dl.dropboxusercontent.com/s/15ntve77p59ivc8/Guido.js?dl=0"></script>
-	<script src="https://dl.dropboxusercontent.com/s/m21ztbb1sd4psah/jquery-2.1.4.min.js?dl=0"></script>
-								   
-	<!--Setup Processing Sketch-->
-	<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0"></canvas>
-	<br />
-	<input class="pause" onclick="
-		var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
-		var pjs = Processing.getInstanceById(pid);
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic,500italic' rel='stylesheet' type='text/css'>
 		
-		if ((this).value === 'RESUME' || (this).value === 'START') {
-			pjs.loop();
-			this.value = 'PAUSE';
-		} else if ((this).value === 'PAUSE') {
-			pjs.noLoop();
-			this.value = 'RESUME';
-		}
-	" type="button" value="START" />
-	<input class="pause" onclick="
-		var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
-		var pjs = Processing.getInstanceById(pid);
-		pjs.toggleDebug();
-	" type="button" value="DEBUG" />
-</div>
+		<link href="main.css" rel="stylesheet">
+		
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href="main.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="container">
+				<h1>Axquaris's Rather Astounding Webpage of Excellence</h1>
+			</div>
+		</div>
+
+		<nav class="navbar">
+			<div class="container">
+				<ul class="nav nav-pills">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="ecoblobs.html">Ecoblobs</a></li>
+					<li><a href="modularship.html">ModularShip</a></li>
+					<li><a href="axnet.html">AxNet</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="ecoblobs container">
+			<!--Load Resources-->
+			<script src="https://dl.dropboxusercontent.com/s/oaprsibn7sfjfck/processing.js?dl=0"></script>
+			<script src="https://dl.dropboxusercontent.com/s/15ntve77p59ivc8/Guido.js?dl=0"></script>
+			<script src="https://dl.dropboxusercontent.com/s/m21ztbb1sd4psah/jquery-2.1.4.min.js?dl=0"></script>
+										   
+			<!--Setup Processing Sketch-->
+			<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0"></canvas>
+			<br />
+			<input class="pause btn btn-success" onclick="
+				var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
+				var pjs = Processing.getInstanceById(pid);
+				
+				if ((this).value === 'RESUME' || (this).value === 'START') {
+					pjs.loop();
+					this.value = 'PAUSE';
+				} else if ((this).value === 'PAUSE') {
+					pjs.noLoop();
+					this.value = 'RESUME';
+				}
+			" type="button" value="START" />
+			<input class="pause btn btn-success" onclick="
+				var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
+				var pjs = Processing.getInstanceById(pid);
+				pjs.toggleDebug();
+			" type="button" value="DEBUG" />
+		</div>
+	</body>
+</html>

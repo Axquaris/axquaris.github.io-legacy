@@ -1,27 +1,68 @@
-
+/* Background Image */
 body {
 	background-image: url('wallpaper.jpg');
 }
 
+/*=========================*/
+/* Navigation Bar Settings */
+/*=========================*/
 .header {
 	padding: 14px 10px;
 }
 
 .header h1 {
-	font-family: "Arial Black", Gadget, sans-serif;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: bold;
 }
 
 .nav-pills{
     border: 2px solid #000;
     background-color: #1c1c1c;
+    font-family: 'Ubuntu', sans-serif;
 }
 
+.navbar {
+	padding-bottom: 10px;
+}
+
+/*==========*/
+/* Side Bar */
+/*==========*/
 .side-bar, .body {
 	color: #999999;
 	background-color: #1c1c1c;
 	border: 2px solid #000;
 }
 
+.side-bar .container-fluid {
+	padding-bottom: 10px;
+}
+
+/*==============================*/
+/* Ecoblobs Simulation Settings */
+/*==============================*/
+.ecoblobs {
+	width: 1020px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #999999;
+	background-color: #1c1c1c;
+	border: 2px solid #000;
+}
+
+/* Body Settings */
+.body .container-fluid {
+	padding-left: 12px;
+	padding-right: 10px;
+}
+
+.body .container-fluid {
+	padding-bottom: 10px;
+}
+
+/*=======================*/
+/* Text & Image Settings */
+/*=======================*/
 a:link {
 	color: #ff9900;
 }
@@ -34,27 +75,16 @@ a:hover {
 	color: #ffaa00;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5 {
 	color: #ff9900;
+	font-family: 'Ubuntu', sans-serif;
 }
 
-.body h2, .side-bar h2 {
+h2, h3 {
 	border-bottom: 1px solid #000;
-}
-
-.navbar {
-	padding-bottom: 10px;
 }
 
 img {
 	width: 100%;
 }
 
-.side-bar .container-fluid, .body .container-fluid {
-	padding-bottom: 10px;
-}
-
-.body .container-fluid {
-	padding-left: 12px;
-	padding-right: 10px;
-}
