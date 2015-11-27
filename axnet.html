@@ -40,6 +40,35 @@
 							<p>This is where neural models come in, NMs are custom-tailored networks of neurons that are capable of intelligently interpreting sensor data, making decisions, and putting them into action somewhat like the human brain does. All people have a complex network of about 86 billion neurons that are massively interconnected to form our nervous system, these networks are vastly more complex than Neural Models, however their basic units (neurons) are a good basis for understanding NMs.</p>
 							<h3>The Biological Neuron</h3>
 							<p>Shown in Figure A, dendrites transmit information or electrical pulses received from other neurons to the soma, the electrical pulse then travels along the axon and to another cell, artificial neurons function in a similar way.</p>
+							<h3>The Artificial Neuron</h3>
+							<p>In artificial neurons (Figure B) an array of inputs (Xi) is taken, these inputs are then multiplied by a corresponding set of weights (Wi), this is the "dendrite" of the neuron. Next the inputs are added together and fed to an activation function f(Xi) which is usually a logistic function or hyperbolic tangent (tanh). This step can be represented by the soma of a biological neuron. Finally, the result of the activation function is sent to whatever other neurons it is connected to. This behaves like an axon.</p>
+							<h3>Neural Networks</h3>
+							<p>Neural networks are multiple neurons linked up in an orderly fashion such as in Figure C. This figure has two neurons that are interconnected, the different W values represent the weights of the different inputs. The neurons also have B variables that represent biases being added to their sum functions. Below is a program that I have written simulating the network shown in Figure C. It's various sliders do the following:</p>
+							<ul>
+								<li>
+									W CATEGORY
+									<ul>
+										<li>the GREY slider sets W2 to it's own value and W1 to the negative of it's value</li>
+										<li>ORANGE slider sets W4 to it's current value</li>
+										<li>BLUE slider controls W3</li>
+									</ul>
+								</li>
+								<li>
+									B CATEGORY
+									<ul>
+										<li>the ORANGE slider controls B2</li>
+										<li>the BLUE slider sets B1 to it's value</li>
+									</ul>
+								</li>
+							</ul>
+							ORANGE represents the neuron on the left, or neuron1.<br/>
+							BLUE represents the neuron on the right, or neuron2.<br/>
+							GREY represents both neurons or the sum of their outputs.<br/>
+							<!--NN EXAMPLE GOES HERE-->
+							<p>You may notice that the simulation produces oscillations, this is because the structure shown in Figure C is a CPG or central pattern generator. This particular one takes no inputs and will generate different patterns based on its weights and biases. Often this CPG will stop oscillating if you change it's values too much, a good fix for this is to increase the magnitude of the W GREY slider or lower the B CATEGORY sliders. The frequency can be lowered by reducing the magnitude of the W GREY slider.</p>
+							<p>While this CPG may seem quite simple it is a good stepping stone for me to peer into the world of neural modeling, this is because the CPG in Figure C is actually a neural model of how living organisms create patterns such as heartbeats and breathing, just without any inputs.</p>
+							<h3>Cool Patterns I've made!</h3>
+							
 							<!--<img src="https://i.gyazo.com/e22b162db08cef7b6b201d15e2ca5800.gif" alt="https://gyazo.com/e22b162db08cef7b6b201d15e2ca5800" class="img-rounded"/>-->
 						</div>
 					</div>
@@ -58,7 +87,9 @@
 		</div>
 
 		<div class="footer">
-			<div class="container"></div>
+			<div class="container">
+				<h4>CERTIFIED BY LEE'S DEPARTMENT OF OCD <span class="glyphicon glyphicon-sunglasses" style="font-size:20px"></span></h4>
+			</div>
 		</div>
 	</body>
 </html>
