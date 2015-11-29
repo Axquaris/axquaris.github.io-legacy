@@ -3,9 +3,9 @@ body {
 	background-image: url('wallpaper.jpg');
 }
 
-/*=========================*/
-/* Navigation Bar Settings */
-/*=========================*/
+/*=======*/
+/* Title */
+/*=======*/
 .header {
 	padding: 14px 10px;
 }
@@ -13,12 +13,36 @@ body {
 .header h1 {
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: bold;
+
 }
 
-.nav-pills{
-    border: 2px solid #000;
-    background-color: #1c1c1c;
-    font-family: 'Ubuntu', sans-serif;
+/*=========================*/
+/* Navigation Bar Settings */
+/*=========================*/
+.navbar {
+	border: 2px solid #000;
+	background-color: #1c1c1c;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar button {
+	display: inline;
+	padding: 10px 16px;
+	border-radius: 5px;
+	font-family: 'Ubuntu', sans-serif;
+	
+	border: none;
+	outline: none;
+}
+
+.navbar button {
+	color: #dd7700;
+	background-color: #1c1c1c;
+}
+
+.navbar button:hover {
+	background-color: #4D4D4D;
+	color: #ffaa00;
 }
 
 /*==========*/
