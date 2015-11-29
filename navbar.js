@@ -42,6 +42,6 @@ $(document).ready(function() {
     	setTimeout(function() {
 			target.fadeIn(fadeTime/2);
 			$('.footer').fadeIn(fadeTime/2);
-		}, fadeTime/2);
+		}, fadeTime/2 + 5);
     }
 });
