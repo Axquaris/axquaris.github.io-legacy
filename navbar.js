@@ -1,10 +1,7 @@
 
 /* Navbar Code */
 $(document).ready(function() {
-	updateNav($('.navbar button .home'));
-
-	var target = $('#'+$('.navbar button .home').text().toLowerCase());
-	changeTab(target);
+	$('.navbar button .home').css('display', '');
 
 	$('.navbar button').click(function() {
 		updateNav($(this));
