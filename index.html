@@ -46,34 +46,30 @@
 		</div>
 
 		<!-- Makes Tabs -->
-		<div ng-repeat="tab in ['home']">
-			<div class="container tab" id="{{tab}}" style="display: ;">
-				<div class="row">
-					<div class="col-md-9">
-						<div class="body">
-							<div class="container-fluid" ng-include="tab+'/body.html'"></div>
-						</div>
+		<div class="container tab" id="{{tab}}" style="display:;" ng-repeat="tab in ['home']">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="body">
+						<div class="container-fluid" ng-include="tab+'/body.html'"></div>
 					</div>
-					<div class="col-md-3">
-						<div class="side-bar">
-							<div class="container-fluid" ng-include="tab+'/sidebar.html'"></div>
-						</div>
+				</div>
+				<div class="col-md-3">
+					<div class="side-bar">
+						<div class="container-fluid" ng-include="tab+'/sidebar.html'"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div ng-repeat="tab in ['ecoblobs','modularship','axnet']">
-			<div class="container tab" id="{{tab}}" style="display: none;">
-				<div class="row">
-					<div class="col-md-9">
-						<div class="body">
-							<div class="container-fluid" ng-include="tab+'/body.html'"></div>
-						</div>
+		<div class="container tab" id="{{tab}}" style="display: none;" ng-repeat="tab in ['ecoblobs','modularship','axnet']">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="body">
+						<div class="container-fluid" ng-include="tab+'/body.html'"></div>
 					</div>
-					<div class="col-md-3">
-						<div class="side-bar">
-							<div class="container-fluid" ng-include="tab+'/sidebar.html'"></div>
-						</div>
+				</div>
+				<div class="col-md-3">
+					<div class="side-bar">
+						<div class="container-fluid" ng-include="tab+'/sidebar.html'"></div>
 					</div>
 				</div>
 			</div>
