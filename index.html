@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="axSite">
 
 	<head>
 		<!-- Google Analytics -->
@@ -16,16 +16,17 @@
 		<!-- CSS / Bootstrap -->
 		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic,500italic' rel='stylesheet' type='text/css'>
 		<link href="main.css" rel="stylesheet">
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- My CSS -->
 		<link href="main.css" rel="stylesheet">
 
 		<!-- JavaScript / JQuery / AngularJS -->
-		<script type='text/javascript' src='jquery/jquery-1.11.3.min.js'></script>
+		<script type='text/javascript' src='resources/jquery-1.11.3.min.js'></script>
+		<script type='text/javascript' src='resources/angular.min.js'></script>
 		<!-- My JS -->
 		<script type='text/javascript' src='navbar.js'></script>
-
+		<script type='text/javascript' src='app.js'></script>
 	</head>
 
 	<body>
@@ -44,7 +45,24 @@
 			</div>
 		</div>
 
-		<div class="container tab" id="home" style="display:;">
+		<div ng-repeat="tab in ['home','ecoblobs','modularship','axnet']">
+			<div class="container tab" id="{{tab}}" style="display:;">
+				<div class="row">
+					<div class="col-md-9">
+						<div class="body">
+							<div class="container-fluid" ng-include="tab+'/body.html'"></div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="side-bar">
+							<div class="container-fluid" ng-include="tab+'/sidebar.html'"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--<div class="container tab" id="home" style="display:;">
 			<div class="row">
 				<div class="col-md-9">
 					<div class="body">
@@ -129,38 +147,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-
-		<div class="container tab" id="ecoblobs-program" style="display:none;">
-			<div class="ecoblobs">
-			<div class="container">
-				<!--Load Resources-->
-				<script src="https://dl.dropboxusercontent.com/s/oaprsibn7sfjfck/processing.js?dl=0"></script>
-				<script src="https://dl.dropboxusercontent.com/s/15ntve77p59ivc8/Guido.js?dl=0"></script>
-				<script src="https://dl.dropboxusercontent.com/s/m21ztbb1sd4psah/jquery-2.1.4.min.js?dl=0"></script>
-											   
-				<!--Setup Processing Sketch-->
-				<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0"></canvas>
-				<br />
-				<input class="pause btn btn-success" onclick="
-					var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
-					var pjs = Processing.getInstanceById(pid);
-					
-					if ((this).value === 'RESUME' || (this).value === 'START') {
-						pjs.loop();
-						this.value = 'PAUSE';
-					} else if ((this).value === 'PAUSE') {
-						pjs.noLoop();
-						this.value = 'RESUME';
-					}
-				" type="button" value="START" />
-				<input class="pause btn btn-success" onclick="
-					var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
-					var pjs = Processing.getInstanceById(pid);
-					pjs.toggleDebug();
-				" type="button" value="DEBUG" />
-			</div>
 			</div>
 		</div>
 
@@ -265,11 +251,9 @@
 							<span style="color:#396ab1; font-weight:bold">BLUE</span> represents the neuron on the right, or neuron2.<br/>
 							<span style="color:#535154; font-weight:bold">GREY</span> represents both neurons or the sum of their outputs.<br/>
 							<br/>
-							<!--Load Resources-->
 							<script src="https://dl.dropboxusercontent.com/s/oaprsibn7sfjfck/processing.js?dl=0"></script>
 							<script src="https://dl.dropboxusercontent.com/s/15ntve77p59ivc8/Guido.js?dl=0"></script>
 							<script src="https://dl.dropboxusercontent.com/s/m21ztbb1sd4psah/jquery-2.1.4.min.js?dl=0"></script>
-							<!--Setup Processing Sketch-->
 							 <canvas data-processing-sources="https://dl.dropboxusercontent.com/s/wueq4p2rwxmmsns/TestCPG_BU1.pde?dl=0"></canvas>
 							<br />
 							<input class="pause btn btn-success" onclick="
@@ -305,6 +289,38 @@
 					</div>
 				</div>
 			</div>
+		</div>-->
+
+		<div class="container tab" id="ecoblobs-program" style="display:none;">
+			<div class="ecoblobs">
+			<div class="container">
+				<!--Load Resources-->
+				<script src="https://dl.dropboxusercontent.com/s/oaprsibn7sfjfck/processing.js?dl=0"></script>
+				<script src="https://dl.dropboxusercontent.com/s/15ntve77p59ivc8/Guido.js?dl=0"></script>
+				<script src="https://dl.dropboxusercontent.com/s/m21ztbb1sd4psah/jquery-2.1.4.min.js?dl=0"></script>
+											   
+				<!--Setup Processing Sketch-->
+				<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0"></canvas>
+				<br />
+				<input class="pause btn btn-success" onclick="
+					var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
+					var pjs = Processing.getInstanceById(pid);
+					
+					if ((this).value === 'RESUME' || (this).value === 'START') {
+						pjs.loop();
+						this.value = 'PAUSE';
+					} else if ((this).value === 'PAUSE') {
+						pjs.noLoop();
+						this.value = 'RESUME';
+					}
+				" type="button" value="START" />
+				<input class="pause btn btn-success" onclick="
+					var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
+					var pjs = Processing.getInstanceById(pid);
+					pjs.toggleDebug();
+				" type="button" value="DEBUG" />
+			</div>
+			</div>
 		</div>
 
 		</div>
@@ -314,5 +330,16 @@
 				<h5>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2015 by Dominykas Buracas. All rights reserved.</h5>
 			</div>
 		</div>
+
+		<script type="text/ng-template" id="home sidebar">
+			<h2>About Me <span class="glyphicon glyphicon-user"></span> </h2>
+			<p>I am a person who codes stuff when not doing homework</p>
+			<a href="http://processingxp.blogspot.com/">My Blog About Coding</a>
+			<br/>
+			<a href="https://github.com/Axquaris">My GitHub Page</a>
+			<br/>
+			<br/>
+			<img src="home/squirrel.png" class="squirrel">
+		</script>
 	</body>
 </html>
