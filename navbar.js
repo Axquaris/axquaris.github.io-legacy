@@ -1,8 +1,6 @@
 
 /* Navbar Code */
 $(document).ready(function() {
-	$('.navbar button .home').css('display', '');
-
 	$('.navbar button').click(function() {
 		updateNav($(this));
 
