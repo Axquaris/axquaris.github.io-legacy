@@ -1,6 +1,6 @@
 /* Background Image */
 body {
-	background-image: url('resources/wallpaper.jpg');
+	background-image: url('wallpaper.jpg');
 }
 
 /*=======*/
@@ -154,3 +154,4 @@ h2, h3 {
 img {
 	width: 100%;
 }
+
