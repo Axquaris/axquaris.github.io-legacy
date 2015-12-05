@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="axSite">
+
+	<head>
+		<!-- Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-69261526-2', 'auto');
+		  ga('send', 'pageview');
+		</script>
+
+		<!-- CSS / Bootstrap -->
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic,500italic' rel='stylesheet' type='text/css'>
+		<link href="main.css" rel="stylesheet">
+		<link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- My CSS -->
+		<link href="main.css" rel="stylesheet">
+
+		<!-- JavaScript / JQuery / AngularJS -->
+		<script type='text/javascript' src='resources/jquery-1.11.3.min.js'></script>
+		<script type='text/javascript' src='resources/angular.min.js'></script>
+		<!-- My JS -->
+		<script type='text/javascript' src='navbar.js'></script>
+		<script type='text/javascript' src='app.js'></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="container">
+				<h1>Axquaris's Rather Astounding Webpage of Excellence</h1>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="navbar">
+				<button class="home" type="button" style="background-color: #000; color: #ffaa00;">Home</button>
+				<button class="ecoblobs" type="button">Ecoblobs</button>
+				<button class="modularship" type="button">ModularShip</button>
+				<button class="axnet" type="button">AxNet</button>
+			</div>
+		</div>
+
+		<!-- Makes Tabs -->
+		<div class="container tab" id="{{tab}}" style="display:;" ng-repeat="tab in ['home']">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="body">
+						<div class="container-fluid" ng-include="'pages/'+tab+'/body.html'"></div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="side-bar">
+						<div class="container-fluid" ng-include="'pages/'+tab+'/sidebar.html'"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container tab" id="{{tab}}" style="display: none;" ng-repeat="tab in ['ecoblobs','modularship','axnet']">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="body">
+						<div class="container-fluid" ng-include="'pages/'+tab+'/body.html'"></div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="side-bar">
+						<div class="container-fluid" ng-include="'pages/'+tab+'/sidebar.html'"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container tab" id="ecoblobs-program" style="display:none;">
+			<div class="ecoblobs" ng-include="'pages/ecoblobs-program/custom.html'"></div>
+		</div>
+
+		</div>
+		<div class="footer">
+			<div class="container">
+				<!--<h5>CERTIFIED BY LEE'S DEPARTMENT OF OCD <span class="glyphicon glyphicon-sunglasses" style="font-size:20px"></span></h5>-->
+				<h5>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> 2015 by Dominykas Buracas. All rights reserved.</h5>
+			</div>
+		</div>
+	</body>
+</html>
