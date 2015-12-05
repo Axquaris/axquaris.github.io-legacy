@@ -1,14 +1,14 @@
 
 /* Navbar Code */
 $(document).ready(function() {
-	$('.navbar button').click(function() {
+	$('.navbar button').on("click", function() {
 		updateNav($(this));
 
 		var target = $('#'+$(this).text().toLowerCase());
 		changeTab(target);
     });
 
-    $('#ecoblobs .body button').click(function() {
+    $('body').on("click", '#ecoblobs .body button', function() {
 		$('.navbar button').css('background-color', '');
 		$('.navbar button').css('color', '');
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
 		changeTab(target);
     });
 
-    $('#home .thumbnail').click(function() {
+    $('body').on("click", '#home .thumbnail', function() {
     	var pg;
     	if ( $(this).hasClass('ecoblobs') ) pg = 'ecoblobs';
     	else if ( $(this).hasClass('modularship') ) pg = 'modularship';
