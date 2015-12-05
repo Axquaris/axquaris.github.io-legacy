@@ -1,0 +1,26 @@
+<div class="container">
+	<!--Load Resources-->
+	<script src="pages/ecoblobs-program/sketch/processing.js"></script>
+	<script src="pages/ecoblobs-program/sketch/Guido.js"></script>
+								   
+	<!--Setup Processing Sketch-->
+	<canvas data-processing-sources="pages/ecoblobs-program/sketch/Movers.pde"></canvas>
+	<br />
+	<input class="pause btn btn-success" onclick="
+		var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
+		var pjs = Processing.getInstanceById(pid);
+		
+		if ((this).value === 'RESUME' || (this).value === 'START') {
+			pjs.loop();
+			this.value = 'PAUSE';
+		} else if ((this).value === 'PAUSE') {
+			pjs.noLoop();
+			this.value = 'RESUME';
+		}
+	" type="button" value="START" />
+	<input class="pause btn btn-success" onclick="
+		var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
+		var pjs = Processing.getInstanceById(pid);
+		pjs.toggleDebug();
+	" type="button" value="DEBUG" />
+</div>
