@@ -82,22 +82,24 @@
 		<div class="row">
 			<div class="col-md-9">
 				<div class="body">
-					<span ng-include="'pages/axnet/bodyI.html'"></span>
-					<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/wueq4p2rwxmmsns/TestCPG_BU1.pde?dl=0"></canvas>
-					<br />
-					<input class="pause btn btn-success" onclick="
-						var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
-						var pjs = Processing.getInstanceById(pid);
-						
-						if ((this).value === 'RESUME' || (this).value === 'START') {
-							pjs.loop();
-							this.value = 'PAUSE';
-						} else if ((this).value === 'PAUSE') {
-							pjs.noLoop();
-							this.value = 'RESUME';
-						}  
-					" type="button" value="START" />
-					<span ng-include="'pages/axnet/bodyII.html'"></span>
+					<div class="container-fluid">
+						<span ng-include="'pages/axnet/bodyI.html'"></span>
+						<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/wueq4p2rwxmmsns/TestCPG_BU1.pde?dl=0"></canvas>
+						<br />
+						<input class="pause btn btn-success" onclick="
+							var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
+							var pjs = Processing.getInstanceById(pid);
+							
+							if ((this).value === 'RESUME' || (this).value === 'START') {
+								pjs.loop();
+								this.value = 'PAUSE';
+							} else if ((this).value === 'PAUSE') {
+								pjs.noLoop();
+								this.value = 'RESUME';
+							}  
+						" type="button" value="START" />
+						<span ng-include="'pages/axnet/bodyII.html'"></span>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
