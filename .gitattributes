@@ -2,3 +2,4 @@ $ cat .gitattributes
 bootstrap/* linguist-vendored
 jquery/* linguist-vendored
 resources/* linguist-vendored
+pages/*/sketch/* linguist-vendored

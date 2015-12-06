@@ -40,26 +40,3 @@
 <span style="color:#396ab1; font-weight:bold">BLUE</span> represents the neuron on the right, or neuron2.<br/>
 <span style="color:#535154; font-weight:bold">GREY</span> represents both neurons or the sum of their outputs.<br/>
 <br/>
-<script src="pages/axnet/sketch/processing.js"></script>
-<script src="pages/axnet/sketch/Guido.js"></script>
-<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/wueq4p2rwxmmsns/TestCPG.pde"></canvas>
-<br />
-<input class="pause btn btn-success" onclick="
-	var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
-	var pjs = Processing.getInstanceById(pid);
-	
-	if ((this).value === 'RESUME' || (this).value === 'START') {
-		pjs.loop();
-		this.value = 'PAUSE';
-	} else if ((this).value === 'PAUSE') {
-		pjs.noLoop();
-		this.value = 'RESUME';
-	}  
-" type="button" value="START" />
-<br/><br/>
-<p>&emsp;You may notice that the simulation produces oscillations, this is because the structure shown in Figure C is a CPG or central pattern generator. This particular one takes no inputs and will generate different patterns based on its weights and biases. Often this CPG will stop oscillating if you change it's values too much, a good fix for this is to increase the magnitude of the W GREY slider or lower the B CATEGORY sliders. The frequency can be lowered by reducing the magnitude of the W GREY slider.</p>
-<p>&emsp;While this CPG may seem quite simple it is a good stepping stone for me to peer into the world of neural modeling, this is because the CPG in Figure C is actually a neural model of how living organisms create patterns such as heartbeats and breathing, just without any inputs.</p>
-<h3>Cool Patterns I've made!</h3>
-<img src="pages/axnet/resources/g1.gif" class="img-rounded" style="width:89%"/>
-<br/><br/>
-<img src="pages/axnet/resources/g2.gif" class="img-rounded" style="width:89%"/>
