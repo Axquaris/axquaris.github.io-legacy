@@ -2,7 +2,7 @@ float mult = 0;
 int mod = 500;
 int hue = 0;
 
-boolean debug = false;
+boolean debugM = false;
 
 void setup()
 {
@@ -14,7 +14,8 @@ void setup()
   noLoop();
 }
 
-void draw(){
+void draw()
+{
   background(100);
   stroke(hue, 1000, 1000);
   for (int i=0; i<=mod; i++) {
@@ -25,11 +26,7 @@ void draw(){
     line(400+400*cos(a), 400+400*sin(a), 400+400*cos(b), 400+400*sin(b));
   }
 
-  mult+=0.01;
-  hue++;
-  
-
-  if (debug) {
+  if (debugM) {
     text("X"+mult, 10, 770);
     mult+=0.1;
     hue+=10;
@@ -42,5 +39,5 @@ void draw(){
 }
 
 void debug() {
-  debug = !debug;
+  debugM = !debugM;
 }
