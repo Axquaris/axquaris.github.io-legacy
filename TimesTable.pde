@@ -23,4 +23,5 @@ void draw(){
   }
   mult+=0.05;
   hue++;
+  if (hue>1000) hue=0;
 }
