@@ -21,7 +21,7 @@ void draw(){
     float b = 2*PI*temp/mod;
     line(400+400*cos(a), 400+400*sin(a), 400+400*cos(b), 400+400*sin(b));
   }
-  mult+=0.05;
+  mult+=0.01;
   hue++;
   if (hue>1000) hue=0;
 }
