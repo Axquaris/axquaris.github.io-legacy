@@ -8,6 +8,7 @@ void setup()
   //colorMode(HSB, 1000);
   frameRate(30);
   strokeWeight(0.6);
+  noLoop();
 }
 
 void draw(){
