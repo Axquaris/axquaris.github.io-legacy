@@ -2,12 +2,15 @@ float mult = 0;
 int mod = 500;
 int hue = 0;
 
+boolean debug = false;
+
 void setup()
 {
   size(800,800);
   colorMode(HSB, 1000);
   frameRate(30);
   strokeWeight(0.6);
+  textSize(26);
   noLoop();
 }
 
@@ -21,7 +24,23 @@ void draw(){
     float b = 2*PI*temp/mod;
     line(400+400*cos(a), 400+400*sin(a), 400+400*cos(b), 400+400*sin(b));
   }
+
   mult+=0.01;
   hue++;
+  
+
+  if (debug) {
+    text("X"+mult, 10, 770);
+    mult+=0.1;
+    hue+=10;
+  }
+  else {
+    mult+=0.01;
+    hue++;
+  }
   if (hue>1000) hue=0;
+}
+
+void debug() {
+  debug = !debug;
 }
