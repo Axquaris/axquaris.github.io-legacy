@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- CSS / Bootstrap -->
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic,500italic' rel='stylesheet' type='text/css'>
+	<link href="resources/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- JavaScript / JQuery / AngularJS -->
+	<script type='text/javascript' src='resources/jquery-1.11.3.min.js'></script>
+
+	<!-- Processing Sketch Resources -->
+	<script type='text/javascript' src="https://dl.dropboxusercontent.com/s/oaprsibn7sfjfck/processing.js?dl=0"></script>
+	<script type='text/javascript' src="https://dl.dropboxusercontent.com/s/15ntve77p59ivc8/Guido.js?dl=0"></script>
+</head>
+<body>
+	<div class="ecoblobs">
+		<div class="container">
+			<!--Setup Processing Sketch-->
+			<canvas data-processing-sources="TimesTables.pde"></canvas>
+			<br />
+			<input class="pause btn btn-success" onclick="
+				var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
+				var pjs = Processing.getInstanceById(pid);
+				
+				if ((this).value === 'RESUME' || (this).value === 'START') {
+					pjs.loop();
+					this.value = 'PAUSE';
+				} else if ((this).value === 'PAUSE') {
+					pjs.noLoop();
+					this.value = 'RESUME';
+				}
+			" type="button" value="START" />
+			<input class="pause btn btn-success" onclick="
+				var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
+				var pjs = Processing.getInstanceById(pid);
+				pjs.toggleDebug();
+			" type="button" value="DEBUG" />
+		</div>
+	</div>
+</body>
+</html>
