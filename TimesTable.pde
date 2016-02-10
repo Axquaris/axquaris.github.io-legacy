@@ -25,7 +25,7 @@ void draw()
     float b = 2*PI*temp/mod;
     line(400+400*cos(a), 400+400*sin(a), 400+400*cos(b), 400+400*sin(b));
   }
-  text("X"+mult, 10, 770);
+  text("X"+(int)(mult*100)/100.0, 10, 770);
 
   if (debug) {
     mult+=0.1;
