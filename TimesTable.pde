@@ -2,7 +2,7 @@ float mult = 0;
 int mod = 500;
 int hue = 0;
 
-boolean debugM = false;
+boolean debug = false;
 
 void setup()
 {
@@ -25,9 +25,9 @@ void draw()
     float b = 2*PI*temp/mod;
     line(400+400*cos(a), 400+400*sin(a), 400+400*cos(b), 400+400*sin(b));
   }
+  text("X"+mult, 10, 770);
 
-  if (debugM) {
-    text("X"+mult, 10, 770);
+  if (debug) {
     mult+=0.1;
     hue+=10;
   }
@@ -38,6 +38,6 @@ void draw()
   if (hue>1000) hue=0;
 }
 
-void debug() {
-  debugM = !debugM;
+void toggleDebug() {
+  debug = !debug;
 }
