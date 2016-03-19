@@ -46,7 +46,6 @@
 			<button class="ecoblobs" type="button">Ecoblobs</button>
 			<button class="modularship" type="button">ModularShip</button>
 			<button class="axnet" type="button">AxNet</button>
-			<button class="timestable-program" type="button">TimesTable</button>
 		</div>
 	</div>
 
@@ -115,33 +114,6 @@
 			<div class="container">
 				<!--Setup Processing Sketch-->
 				<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0"></canvas>
-				<br />
-				<input class="pause btn btn-success" onclick="
-					var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
-					var pjs = Processing.getInstanceById(pid);
-					
-					if ((this).value === 'RESUME' || (this).value === 'START') {
-						pjs.loop();
-						this.value = 'PAUSE';
-					} else if ((this).value === 'PAUSE') {
-						pjs.noLoop();
-						this.value = 'RESUME';
-					}
-				" type="button" value="START" />
-				<input class="pause btn btn-success" onclick="
-					var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
-					var pjs = Processing.getInstanceById(pid);
-					pjs.toggleDebug();
-				" type="button" value="DEBUG" />
-			</div>
-		</div>
-	</div>
-	
-	<div class="container tab" id="timestable-program" style="display:none;>
-		<div class="ecoblobs">
-			<div class="container">
-				<!--Setup Processing Sketch-->
-				<canvas data-processing-sources="TimesTable.pde"></canvas>
 				<br />
 				<input class="pause btn btn-success" onclick="
 					var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
