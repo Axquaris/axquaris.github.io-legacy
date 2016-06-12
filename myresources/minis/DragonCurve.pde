@@ -28,9 +28,10 @@ void setup() {
 }
 
 void draw() {
-  background(200);
+  background(28);
   textSize(30);
-  fill(0);
+  fill(255,153,0);
+  stroke(255,153,0);
   text("Step #: "+numSteps, 20, 40);
   
   for (Drawable l: lines) {

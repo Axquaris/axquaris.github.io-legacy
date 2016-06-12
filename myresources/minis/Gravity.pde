@@ -23,7 +23,7 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  background(28);
   update();
   render();
 }

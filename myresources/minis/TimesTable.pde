@@ -16,7 +16,7 @@ void setup()
 
 void draw()
 {
-  background(100);
+  background(110);
   stroke(hue, 1000, 1000);
   for (int i=0; i<=mod; i++) {
     float a = 2*PI*i/mod;
@@ -25,6 +25,7 @@ void draw()
     float b = 2*PI*temp/mod;
     line(400+400*cos(a), 400+400*sin(a), 400+400*cos(b), 400+400*sin(b));
   }
+  fill(90, 950, 1000);
   text("X"+(int)(mult*100)/100.0, 10, 770);
 
   if (debug) {
