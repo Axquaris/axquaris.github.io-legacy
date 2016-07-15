@@ -18,7 +18,7 @@ void setup() {
   startPos = new PVector(0,0);
   particles = new ArrayList<CTail>();
   
-  sun = new Star(width/2, height/2);
+  //sun = new Star(width/2, height/2);
   noLoop();
 }
 
@@ -56,7 +56,7 @@ void render() {
   fill(68, 185, 194);
   for (int c = 0; c < comets.size(); c++) comets.get(c).render();
   fill(255, 217, 0);
-  sun.render();
+  //sun.render();
 }
 
 class CTail {
@@ -108,7 +108,7 @@ class Comet {
       float distance2 = xdif*xdif + ydif*ydif;
       PVector direction = new PVector(comet.position.x-position.x, comet.position.y-position.y);
       float collideDist = radius+comet.radius;
-      if (distance2 >= collideDist*collideDist*.95) {
+      if (distance2 >= collideDist*collideDist) {
         direction.setMag(comet.G()*this.G()/distance2);
         velocity.mult(this.G());
         velocity.add(direction);
@@ -144,17 +144,17 @@ class Comet {
     //else if (position.x == width/2 && position.y == height/2) return true;
     
     //Sun Gravity
-    float xdif = width/2-position.x;
-    float ydif = height/2-position.y;
-    float distance2 = xdif*xdif + ydif*ydif;
-    float touchdist = sun.radius-radius;
-    if (distance2 <= touchdist*touchdist*.9)
-      return true;
-    PVector dir = new PVector(xdif, ydif);
-    dir.setMag(sun.G()*this.G()/distance2);
-    velocity.mult(this.G());
-    velocity.add(dir);
-    velocity.div(this.G());
+    // float xdif = width/2-position.x;
+    // float ydif = height/2-position.y;
+    // float distance2 = xdif*xdif + ydif*ydif;
+    // float touchdist = sun.radius-radius;
+    // if (distance2 <= touchdist*touchdist*.9)
+    //   return true;
+    // PVector dir = new PVector(xdif, ydif);
+    // dir.setMag(sun.G()*this.G()/distance2);
+    // velocity.mult(this.G());
+    // velocity.add(dir);
+    // velocity.div(this.G());
     
     for (int c = 0; c < comets.size(); c++) {
       if(interact(comets.get(c))) return true;
