@@ -398,139 +398,25 @@
 		<div class="ecoblobs">
 			<div class="container">
 				<!--Setup Processing Sketch-->
-				<canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0" id="ecoblobs-canvas"></canvas>
-				<div class="row" id="ecoblobs-info">
-					<div id="ecoblobs-controls" class="col-md-8">
-						<div id="ecoblobs-buttons" class="col-md-2">
-							<button class="btn btn-warning" id="ecoblobs-reset-btn">RESET</button>
-							<input class="pause btn btn-success" type="button" value="START" id="start-button"/>
-							<input class="pause btn btn-success" type="button" value="DEBUG" id="debug-button"/>
-						</div>
-						<div id="ecoblobs-sliders">
-							<div class="col-md-8">
-								<input type="text" id="ecoblobs-season-slider" data-slider-id="ecoblobs-season-slider" data-slider-min="0" data-slider-max="3" data-slider-step="1" data-slider-value="2"/>
-							</div>
-							<div class="col-md-4" id="mid-left">
-								<input id="tl" data-slider-id='tl' type="text" data-slider-min="0" data-slider-max="1" data-slider-step=".001" data-slider-value=".5"/>
-								<input id="bl" data-slider-id='bl' type="text" data-slider-min="0" data-slider-max="1" data-slider-step=".001" data-slider-value=".5"/>
-							</div>
-							<div class="col-md-4" id="mid-right">
-								<input id="tr" data-slider-id='tr' type="text" data-slider-min="0" data-slider-max="1" data-slider-step=".001" data-slider-value=".5"/>
-								<input id="br" data-slider-id='br' type="text" data-slider-min="0" data-slider-max="1" data-slider-step=".001" data-slider-value=".5"/>
-							</div>
-							<div class="col-md-8">
-								<input type="text" id="ecoblobs-daytime-slider" data-slider-id="ecoblobs-daytime-slider" data-slider-min="0" data-slider-max="23" data-slider-step="1" data-slider-value="12"/>
-							</div>
-						</div>
-					</div>
-				</div>
-				<style>
-					#ecoblobs-buttons{
-						height: 120px;
-						width: 163px;
-						padding: 0;
-						margin-right: 20px;
-					}
-					#start-button{
-						width: 84px;
-					}
-					#debug-button{
-						width: 75px;
-					}
-					#ecoblobs-reset-btn{
-						height: 80px;
-						width: 100%;
-						margin-bottom: 5px;
-					}
-					#ecoblobs-controls .slider{
-						width: 100%;
-						margin-top: 10px;
-					}
-				</style>
-				<script>
-					function getProcessing(){
-						return Processing.getInstanceById(document.getElementById("ecoblobs-canvas").getAttribute('id'));
-					}
-					
-					//Reset button click handler
-					document.getElementById("ecoblobs-reset-btn").onclick = function(){
-						var pjs = getProcessing();
-						pjs.spawnBlobs();
-						pjs.updateVars();
-					}
-					
-					//Start button click handler
-					document.getElementById("start-button").onclick = function(){
-						var pjs = getProcessing();
-						if (this.value === 'RESUME' || this.value === 'START') {
-							pjs.loop();
-							this.value = 'PAUSE';
-						} else if (this.value === 'PAUSE') {
-							pjs.noLoop();
-							this.value = 'RESUME';
-						}
-					}
-					
-					//Debug button click handler
-					document.getElementById("debug-button").onclick = function(){
-						var pjs = getProcessing();
-						pjs.toggleDebug();
-					}
-					$("#ecoblobs-season-slider").slider({
-							formatter: function(value){
-								switch(value){
-									case 0:
-										return "Winter"
-										break;
-									case 1:
-										return "Spring"
-										break;
-									case 2:
-										return "Summer";
-										break;
-									case 3:
-										return "Fall";
-										break;
-								};
-							}
-					});
-					$("#ecoblobs-daytime-slider").slider({
-						formatter: function(value){
-							var hour = "";
-							if(value === 0){
-								hour = "Midnight";
-							}
-							else if(value === 12){
-								hour = "Noon";
-							}
-							else if(value > 12){
-								hour += value - 12;
-								hour += " PM";
-							}
-							else{
-								hour += value;
-								hour += " AM";
-							}
-							return hour;
-						}
-					});
-					$("#tl").slider({
-						precision: 3,
-						value: .5
-					});
-					$("#tr").slider({
-						precision: 3,
-						value: .5
-					});
-					$("#bl").slider({
-						precision: 3,
-						value: .5
-					});
-					$("#br").slider({
-						precision: 3,
-						value: .5
-					});
-				</script>
+		                <canvas data-processing-sources="https://dl.dropboxusercontent.com/s/aijn286q85gfr3r/Movers.pde?dl=0"</canvas>
+		                <br />
+		                <input class="pause btn btn-success" onclick="
+		                    var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
+		                    var pjs = Processing.getInstanceById(pid);
+		                    
+		                    if ((this).value === 'RESUME' || (this).value === 'START') {
+		                        pjs.loop();
+		                        this.value = 'PAUSE';
+		                    } else if ((this).value === 'PAUSE') {
+		                        pjs.noLoop();
+		                        this.value = 'RESUME';
+		                    }
+		                " type="button" value="START" />
+		                <input class="pause btn btn-success" onclick="
+		                    var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
+		                    var pjs = Processing.getInstanceById(pid);
+		                    pjs.toggleDebug();
+		                " type="button" value="DEBUG" />
 			</div>
 		</div>
 	</div>
