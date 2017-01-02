@@ -350,6 +350,34 @@
 						<br/>
 						<br/>
 						
+						<h3>ND Projection to 2D</h3>
+						<p>This program creates a series of lines to define an N-dimensional cube. This cube is then rotated, and projected to two dimensions to be displayed.</p>
+						<br/>
+						<!--Setup Processing Sketch-->
+						<canvas data-processing-sources="myresources/minis/Projecton.pde"></canvas>
+						<br/>
+						<input class="pause btn btn-success" onclick="
+							var pid = this.previousElementSibling.previousElementSibling.getAttribute('id');
+							var pjs = Processing.getInstanceById(pid);
+							
+							if ((this).value === 'RESUME' || (this).value === 'START') {
+								pjs.loop();
+								this.value = 'PAUSE';
+							} else if ((this).value === 'PAUSE') {
+								pjs.noLoop();
+								this.value = 'RESUME';
+							}
+						" type="button" value="START" />
+						<input class="pause btn btn-success" onclick="
+							var pid = this.previousElementSibling.previousElementSibling.previousElementSibling.getAttribute('id');
+							var pjs = Processing.getInstanceById(pid);
+							pjs.step();
+						" type="button" value="NEXTSTEP" />
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						
 						<h3>Gravity</h3>
 						<p>This is a simulation of gravity involving asteroids flying around a sun. Click and drag to spawn an asteroid. Asteroids will be pulled in by the sun and attract eachother based on real physics (allthough this simulation is not to scale), when two asteroids collide they will fuse and become an even bigger mass!</p>
 						<br/>
