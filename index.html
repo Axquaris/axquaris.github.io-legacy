@@ -60,11 +60,11 @@
 				<div class="body">
 					<div class="container-fluid">
 						<h2>Home</h2>
-						<p class="lead">This is my website, here I showcase my latest expiriments.</p>
-						<p>&emsp;My first expiriment was Ecoblobs, a simulation of a bacterial ecosystem. I came up with the idea while reading Daniel Shiffman's <a href="http://natureofcode.com/">The Nature of Code</a>.</p>
-						<p>&emsp;After I had completed this project I moved on to ModularShip, a game about building and piloting a spaceship to fight against AI.</p>
-						<p>&emsp;The next undertaking I started was learning to use and make neural models. I made Axnet to help me understand the basics of neural networks. Next I learned HTML/CSS/JavaScript and created this website. Afterwards I made a series of updates to ModularShip.</p>
-						<p>&emsp;At the moment I am learning to use TensorFlow for machine learning in robotics.</p>
+						<p class="lead">This is my website, here I showcase my projects and expiriments.</p>
+						<p>&emsp;My first expiriment was Ecoblobs, a simulation of a bacterial ecosystem. I came up with the idea while reading Daniel Shiffman's <a href="http://natureofcode.com/">The Nature of Code</a>. After I had completed this project I moved on to ModularShip, a game about building and piloting a spaceship to fight against AI. It's core feature is the ability to create your own spaceship by dragging and dropping various blocks. To showcase these projects I built this website using HTML/CSS/JavaScript.</p>
+                        <p>&emsp;After I built my own website, I made a dynamic website using a web2py (Python) backend for my robotics team. It featured a secure database where every member of the team had thier own account and profile.
+                        <p>&emsp;My adventures in neural networks started with Axnet, a Neural Pattern Generator that I built after being inspired by a <a href="http://d-nb.info/980325501/34">research paper</a>. (see page 97) After this project, I built a demo that performed object detection and recognition on live video. I did this using Tensorflow (with GPU support) and a network that was pre-trained by Google.</p>
+						<p>&emsp;At the moment I am studying Computer Science at UC Berkeley.</p>
 						<div class="row">
 							<div class="col-sm-6 col-md-4">
 								<div class="thumbnail ecoblobs">
@@ -119,7 +119,7 @@
 						<h2>Ecoblobs</h2>
 						<p class="lead">Ecoblobs was my first project. It features a dynamic, living ecosystem where different species of simple organisms compete for survival.</p>
 						<p>&emsp;The three species of organisms are the red carnivores, grey herbivores, and green plants. All the species are capable of reproduction while only the carnivores and herbivores can move of their own accord and "think". Reproduction is done asexually and mimics binary fission, it only occurs when a creature passes a certain mass limit and is not overcrowded or threatened by other organisms. The AI is fairly simple, it considers all the other relevant creatures in the ecosystem, it then uses a system of equations based on relative mass, distance, and current actions to determine what to do in relation to the other blob and how important doing so is. The average is then taken of all these desires and used to decide a path of acceleration.</p>
-						<p>&emsp;The physical world is governed by physical principles like F=M*A and drag, however there is still work to be done such as implementing drag in water. The world itself is a torus, this means that going up will eventually get you to the bottom, and vice versa. This also applies to the left and right edges of the world. The dynamics of this ecosystem are quite realistic and are based upon a simple food chain that tries to keep any one species from becoming too populus or any species dying out, however balancing the species is very difficult so the populations will fluctuate quite a lot.</p>
+						<p>&emsp;The physical world is governed by physical principles like F=M*A and drag. The world itself is a torus, this means that going up will eventually get you to the bottom, and vice versa. This also applies to the left and right edges of the world. The dynamics of this ecosystem are quite realistic and are based upon a simple food chain that tries to keep any one species from becoming too populus or any species dying out, however balancing the species is very difficult; the populations are very unstable and will fluctuate a lot.</p>
 						<h3>Controls:</h3>
 						<ul>
 							<li>Bottom left corner button resets the simulation and regenerates the creature populations based on the values entered in the sliders</li>
@@ -153,6 +153,14 @@
 					<div class="container-fluid">
 						<h2>Modular Ship</h2>
 						<p>&emsp;This a game I have developed <a href="https://processing.org/">Processing 3</a> with Fisica. It is a space shooter where the user has to destroy enemy ships and can steal what parts they drop to improve his/her own ship. You can add modules you your ship, fly around, and test firing on indestructible blobs or an enemy dummy ship.</p>
+                        <p>&emsp;There are four different types of ship module:
+                            <ul>
+                                <li>The Core - The heart of the ship, if it is destroyed then the ship is destroyed. It also has built in thrusters and a cannon</li>
+								<li>Structure - A sturdy extension of the ship, any module can be attached to it</li>
+								<li>Thruster - Provides thrust in the direction it is facing</li>
+								<li>Cannon - Launches projectiles at high velocity in the direction it points, used to destroy enemy ships</li>
+                            </ul>
+                        </p>
 						<h3>How to play the game:</h3>
 						<ol>
 							<li>Download the game for: <a href="https://www.dropbox.com/s/yysvhj0ezz4nfxe/ModularShip-windows64.zip?dl=0" target="_blank">Windows</a> or <a href="https://www.dropbox.com/s/c0h5gwth4iwqurd/ModularShip-macosx.zip?dl=0" target="_blank">Mac</a></li>
@@ -207,7 +215,7 @@
 				<div class="body">
 					<div class="container-fluid">
 						<h2>AxNet</h2>
-						<p>&emsp;This year for the robotics team at LJHS I am planning to use neural models to help control the robot in the upcoming competition. In past competitions we have had many issues with human error and network latency in driving our robot, the best fix for this is to make the robot capable of autonomously reacting to it's environment and performing actions in response.</p>
+                        <p>&emsp;Axnet is a Neural Pattern Generator that I built after being inspired by a <a href="http://d-nb.info/980325501/34">research paper</a> (see page 97) on the applications of Neural Models to walking robots.</p>
 						<p>&emsp;This is where neural models come in, NMs are custom-tailored networks of neurons that are capable of intelligently interpreting sensor data, making decisions, and putting them into action somewhat like the human brain does. All people have a complex network of about 86 billion neurons that are massively interconnected to form our nervous system, these networks are vastly more complex than Neural Models, however their basic units (neurons) are a good basis for understanding NMs. </p>
 						<div class="row">
 							<div class="col-xs-7">
@@ -265,7 +273,7 @@
 						<br/><br/>
 						<p>&emsp;You may notice that the simulation produces oscillations, this is because the structure shown in Figure C is a CPG or central pattern generator. This particular one takes no inputs and will generate different patterns based on its weights and biases. Often this CPG will stop oscillating if you change it's values too much, a good fix for this is to increase the magnitude of the W GREY slider or lower the B CATEGORY sliders. The frequency can be lowered by reducing the magnitude of the W GREY slider.</p>
 						<p>&emsp;While this CPG may seem quite simple it is a good stepping stone for me to peer into the world of neural modeling, this is because the CPG in Figure C is actually a neural model of how living organisms create patterns such as heartbeats and breathing, just without any inputs.</p>
-						<h3>Cool Patterns I've made!</h3>
+						<h2>Example Patterns:</h2>
 						<img src="myresources/axnet/g1.gif" class="img-rounded" style="width:89%"/>
 						<br/><br/>
 						<img src="myresources/axnet/g2.gif" class="img-rounded" style="width:89%"/>
@@ -351,7 +359,7 @@
 						<br/>
 						
 						<h3>Gravity</h3>
-						<p>This is a simulation of gravity involving asteroids flying around a sun. Click and drag to spawn an asteroid. Asteroids will be pulled in by the sun and attract eachother based on real physics (allthough this simulation is not to scale), when two asteroids collide they will fuse and become an even bigger mass!</p>
+						<p>This is a simulation of gravity involving asteroids that can merge and grow. Click and drag to spawn an asteroid. Asteroids will be pulled in by eachother based on real physics (allthough this simulation is not to scale), when two asteroids collide they will fuse and become an even bigger mass!</p>
 						<br/>
 						<!--Setup Processing Sketch-->
 						<canvas data-processing-sources="myresources/minis/Gravity.pde"></canvas>
